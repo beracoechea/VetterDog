@@ -18,7 +18,7 @@ export default class Carga extends Component {
 
 const styles = StyleSheet.create({
   link: {
-    fontSize: 20,
+    fontSize: 25,
     color: 'blue',
   },
 });
