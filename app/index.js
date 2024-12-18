@@ -1,6 +1,7 @@
-import { registerRootComponent } from 'expo';
+import Carga from "./Components/Views/Carga";
+import SeleccionInicio from "./Components/Views/SeleccionInicio";
 
-import App from './App';
-
-
-registerRootComponent(App);
+export default function Index() {
+    return <Carga/>;
+    <SeleccionInicio/>
+}
