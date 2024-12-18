@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "scheme":"VetterDog",
+    "scheme": "VetterDog",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash.png",
@@ -21,9 +21,6 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       }
-<<<<<<< HEAD
-    }
-=======
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +28,5 @@
     "plugins": [
       "expo-router"
     ]
->>>>>>> e9a6c7f2f59c9b30926e83752a42ffbac9bfa02f
   }
 }
