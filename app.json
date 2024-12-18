@@ -9,7 +9,7 @@
     "scheme":"VetterDog",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,9 +18,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       }
+<<<<<<< HEAD
+    }
+=======
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,5 +31,6 @@
     "plugins": [
       "expo-router"
     ]
+>>>>>>> e9a6c7f2f59c9b30926e83752a42ffbac9bfa02f
   }
 }
