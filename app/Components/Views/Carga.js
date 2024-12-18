@@ -1,24 +1,41 @@
-import { Text, View, StyleSheet } from 'react-native';
-import React, { Component } from 'react';
-import { Link } from 'expo-router';
+import {  View, StyleSheet, ImageBackground,ActivityIndicator,} from 'react-native';
+import React, { useEffect } from 'react';
+import {useRouter } from 'expo-router';
+import splash from '../../../assets/splash.png'
+import { Colores } from '../Generic/Colors';
 
-export default class Carga extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Carga</Text>
-       
-        <Link href="/SeleccionInicio" style={styles.link}>
-          Cambio de ventana
-        </Link>
-      </View>
-    );
-  }
-}
+
+
+const Carga = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      router.replace('/SeleccionInicio');
+    }, 3500);
+
+    return () => clearTimeout(timeout); 
+  }, [router]);
+
+  return (
+    <View style={styles.container}>
+      <ImageBackground source={splash} resizeMode="cover" style={styles.image}>
+        <ActivityIndicator size="large" color={Colores.OliveHarves} />
+      </ImageBackground>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-  link: {
-    fontSize: 20,
-    color: 'blue',
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  image: {
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
   },
 });
+
+export default Carga;
