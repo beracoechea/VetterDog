@@ -64,6 +64,12 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
   },
+  link: {
+    fontSize: 25,
+    color: 'blue',
+
+  },
+
 });
 
 export default Carga;
