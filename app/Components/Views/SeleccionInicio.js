@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import Icons from '../Generic/Icons';
 import Colores from '../Generic/Colors';
+import { signIn, signUp } from '../../../DataBase/Auth';
 
-export default function SeleccionInicio() {
+
+const SeleccionInicio = ({ onSignUp, onLogin }) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    // Manejo del login
+    const handleLogin = async () => {
+        try {
+            const userData = await signUp(email, password);
+            console.log('Registro exitoso:', userData);
+            onSignUp(userData);
+        } catch (error) {
+            alert('Error al registrarse: ' + error.message);
+        }
+       
+    };
+
+    // Manejo del registro
+    const handleSignUp = async () => {
+        try {
+            const userData = await signIn(email, password);
+            console.log('Inicio de sesión exitoso:', userData);
+            onLogin(userData);
+        } catch (error) {
+            alert('Error al iniciar sesión: ' + error.message);
+        }
+    };
     return (
         <ImageBackground
             source={require('../../../assets/Login-BG.png')}
@@ -15,6 +42,8 @@ export default function SeleccionInicio() {
             <View style={Styles.contain}>
                 {Icons.User({ color: Colores.CowhineCocoa, size: 20, style: { marginRight: 10 } })}
                 <TextInput
+                    value={email}
+                    onChangeText={setEmail}
                     placeholderTextColor={Colores.CowhineCocoa}
                     style={Styles.textInput}
                     placeholder="Username"
@@ -24,6 +53,8 @@ export default function SeleccionInicio() {
             <View style={Styles.contain}>
                 {Icons.Locked({ color: Colores.CowhineCocoa, size: 20, style: { marginRight: 10 } })}
                 <TextInput
+                    value={password}
+                    onChangeText={setPassword}
                     secureTextEntry={true}
                     placeholderTextColor={Colores.CowhineCocoa}
                     style={Styles.textInput}
@@ -31,19 +62,19 @@ export default function SeleccionInicio() {
                 />
             </View>
 
-            <TouchableOpacity style={Styles.ButtonCreateAccount}>
-                <Text style={Styles.createAccount}>Create Account</Text>
-            </TouchableOpacity>
-
             <View style={Styles.ButtonContainer}>
-                <TouchableOpacity style={Styles.IconCircle}>
-                    {/* Add an icon inside the circle */}
+                <Text style={Styles.singIn} onPress={handleLogin}>LOG IN</Text>
+                <TouchableOpacity style={Styles.IconCircle} onPress={handleSignUp } disabled={!email || !password}>
+                    {Icons.ArrowRight({ color: '#fff', size: 20 })}
                 </TouchableOpacity>
             </View>
 
+            <TouchableOpacity style={Styles.ButtonCreateAccount} onPress={handleLogin} disabled={!email || !password}>
+                <Text style={Styles.createAccount}>Create Account</Text>
+            </TouchableOpacity>
         </ImageBackground>
     );
-}
+};
 
 const Styles = StyleSheet.create({
     container: {
@@ -77,19 +108,12 @@ const Styles = StyleSheet.create({
         flex: 1,
         height: 40,
     },
-    Forgot: {
-        textAlign: 'end',
-        marginTop: 10,
-        fontSize: 12,
-        color: Colores.ToastedCaramel,
-        width: '100%',
-    },
     ButtonContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 30,
         width: '80%',
-        marginLeft: '100%',
+        marginLeft:'90%'
     },
     singIn: {
         fontSize: 20,
@@ -135,3 +159,5 @@ const Styles = StyleSheet.create({
         textTransform: 'uppercase',
     },
 });
+
+export default SeleccionInicio;

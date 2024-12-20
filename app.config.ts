@@ -1,6 +1,5 @@
 import { ExpoConfig, ConfigContext } from "expo/config";
 import * as dotenv from 'dotenv';
-import { supabase } from "./DataBase/supabase";
 
 dotenv.config()
 

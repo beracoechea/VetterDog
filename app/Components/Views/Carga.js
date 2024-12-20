@@ -4,12 +4,20 @@ import LottieView from 'lottie-react-native';
 import { useRouter } from 'expo-router';
 import Colors from '../Generic/Colors';
 
+const isAuth = false;
+
 const Carga = () => {
   const router = useRouter();
 
    useEffect(() => {
     const timeout = setTimeout(() => {
-      router.replace('/SeleccionInicio');
+      if(isAuth){
+        router.replace('/Inicio');
+
+      }else{
+        router.replace('/SeleccionInicio');
+      }
+      
     }, 3500);
 
     return () => clearTimeout(timeout);
