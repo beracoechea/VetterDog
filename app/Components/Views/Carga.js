@@ -42,7 +42,7 @@ const Carga = () => {
   );
 };
 
-const colors = [Colors.GoldennBatter, Colors.ToastedCaramel, Colors.SpicedWine, Colors.OliveHarves, Colors.CowhineCocoa];
+const colors = [Colors.GoldennBatter, Colors.ToastedCaramel, Colors.SpicedWine, Colors.CowhineCocoa];
 
 const styles = StyleSheet.create({
   container: {
