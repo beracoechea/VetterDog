@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
+import Colores from '../Generic/Colors';
 
 
 export default function SeleccionInicio(){
@@ -11,13 +12,13 @@ export default function SeleccionInicio(){
             <Text style={Styles.titulo}>Welcome</Text>
             <Text style={Styles.subTitle}>Sign in to your account</Text>
             <TextInput
-                placeholderTextColor={'#442d1c'}
+                placeholderTextColor={Colores.CowhineCocoa}
                 style={Styles.textInput}
                 placeholder="e-mail"
             />
             <TextInput
                 secureTextEntry={true}
-                placeholderTextColor={'#442d1c'}
+                placeholderTextColor={Colores.CowhineCocoa}
                 style={Styles.textInput}
                 placeholder="password"
             />
@@ -54,11 +55,11 @@ container: {
 titulo: {
     fontSize: 80,
     fontWeight: 'bold',
-    color: '#84592B',
+    color: Colores.CowhineCocoa,
 },
 subTitle: {
     fontSize: 20,
-    color: '#E8D1A7',
+    color: Colores.GoldennBatter,
 },
 textInput: {
     padding: 10,
