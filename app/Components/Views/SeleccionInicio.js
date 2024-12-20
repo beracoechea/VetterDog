@@ -8,10 +8,10 @@ import Colores from '../Generic/Colors';
 export default function SeleccionInicio(){
     return(
         <ImageBackground
-            source={'../../../assets/Login-BG.png'}
+            source={require('../../../assets/Login-BG.png')}
             style={Styles.container}
         >
-            <Image style={{width: 150, height: 150}} source={require('../../../assets/icon.png')}/>
+            {/* <Image style={{width: 150, height: 150}} source={require('../../../assets/icon.png')}/> */}
             <Text style={Styles.titulo}>Welcome</Text>
             <Text style={Styles.subTitle}>Sign in to your account</Text>
             <View style={Styles.textInput}>
@@ -56,12 +56,11 @@ export default function SeleccionInicio(){
 const Styles = StyleSheet.create({
 container: {
     flex: 1,
-    backgroundColor: '#f1f1f1',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
 },
 titulo: {
-    fontSize: 80,
+    fontSize: 70,
     fontWeight: 'bold',
     color: Colores.CowhineCocoa,
 },
@@ -76,6 +75,8 @@ textInput: {
     borderRadius: 30,
     backgroundColor: '#fff',
     flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: Colores.CowhineCocoa,
 },
 Forgot: {
     marginTop: 20,
@@ -92,7 +93,7 @@ ButtonSignIn: {
     width: '50%',
     alignItems: 'center',
     borderRadius: 20,
-    backgroundColor: '#fff',
+    backgroundColor: Colores.GoldennBatter,
     padding: 5,
 },
 singIn: {
@@ -112,7 +113,7 @@ ButtonGoogle: {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-    backgroundColor: '#fff',
+    backgroundColor: Colores.OliveHarves,
     padding: 10,
     flexDirection: 'row'
 },
@@ -126,12 +127,12 @@ ButtonFacebook: {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-    backgroundColor: '#fff',
+    backgroundColor: Colores.OliveHarves,
     padding: 10,
     flexDirection: 'row'
 },
 singInFacebook: {
     fontSize: 15,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
 },
 });
