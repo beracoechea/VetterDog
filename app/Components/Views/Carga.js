@@ -9,7 +9,7 @@ const Carga = () => {
 
    useEffect(() => {
     const timeout = setTimeout(() => {
-      router.replace('/SeleccionInicio');
+      router.replace('/pruebaDB');
     }, 3500);
 
     return () => clearTimeout(timeout);
