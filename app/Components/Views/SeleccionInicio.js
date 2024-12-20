@@ -1,27 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
 import Colores from '../Generic/Colors';
 
 
 export default function SeleccionInicio(){
     return(
-        <View style={Styles.container}>
+        <ImageBackground
+            source={'../../../assets/Login-BG.png'}
+            style={Styles.container}
+        >
             <Image style={{width: 150, height: 150}} source={require('../../../assets/icon.png')}/>
             <Text style={Styles.titulo}>Welcome</Text>
             <Text style={Styles.subTitle}>Sign in to your account</Text>
-            <TextInput
-                placeholderTextColor={Colores.CowhineCocoa}
-                style={Styles.textInput}
-                placeholder="e-mail"
-            />
-            <TextInput
-                secureTextEntry={true}
-                placeholderTextColor={Colores.CowhineCocoa}
-                style={Styles.textInput}
-                placeholder="password"
-            />
+            <View style={Styles.textInput}>
+                <Fontisto name='person' color={Colores.CowhineCocoa} size={20} padding={10}/> 
+                <TextInput
+                    placeholderTextColor={Colores.CowhineCocoa}
+                    placeholder="e-mail"
+                />
+            </View>
+            <View style={Styles.textInput}>
+                <Fontisto name='locked' color={Colores.CowhineCocoa} size={20} padding={10}/>
+               <TextInput
+                    secureTextEntry={true}
+                    placeholderTextColor={Colores.CowhineCocoa}
+                    placeholder="password"
+                /> 
+            </View>
+            
             <TouchableOpacity>
                 <Text style={Styles.Forgot}>Forgot your password?</Text>
             </TouchableOpacity>
@@ -41,7 +49,7 @@ export default function SeleccionInicio(){
                 <Text style={Styles.singInFacebook}>SIGN IN WITH FACEBOOK</Text>
             </TouchableOpacity>
             <StatusBar style="auto" />
-        </View>
+        </ImageBackground>
     );
 }
 
@@ -62,13 +70,12 @@ subTitle: {
     color: Colores.GoldennBatter,
 },
 textInput: {
-    padding: 10,
-    paddingStart: 30,
     color: '#000',
     width: '80%',
     marginTop: 20,
     borderRadius: 30,
     backgroundColor: '#fff',
+    flexDirection: 'row',
 },
 Forgot: {
     marginTop: 20,
