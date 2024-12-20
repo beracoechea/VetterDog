@@ -36,8 +36,8 @@ const SeleccionInicio = ({ onSignUp, onLogin }) => {
             source={require('../../../assets/Login-BG.png')}
             style={Styles.container}
         >
-            <Text style={Styles.titulo}>Welcome</Text>
-            <Text style={Styles.subTitle}>Sign in to your account</Text>
+            <Text style={Styles.titulo}>Welcome </Text>
+            <Text style={Styles.subTitle}>Sign in to your account </Text>
 
             <View style={Styles.contain}>
                 {Icons.User({ color: Colores.CowhineCocoa, size: 20, style: { marginRight: 10 } })}
@@ -63,14 +63,14 @@ const SeleccionInicio = ({ onSignUp, onLogin }) => {
             </View>
 
             <View style={Styles.ButtonContainer}>
-                <Text style={Styles.singIn} onPress={handleLogin}>LOG IN</Text>
+                <Text style={Styles.singIn} onPress={handleLogin}>LOG IN </Text>
                 <TouchableOpacity style={Styles.IconCircle} onPress={handleSignUp } disabled={!email || !password}>
                     {Icons.ArrowRight({ color: '#fff', size: 20 })}
                 </TouchableOpacity>
             </View>
 
             <TouchableOpacity style={Styles.ButtonCreateAccount} onPress={handleLogin} disabled={!email || !password}>
-                <Text style={Styles.createAccount}>Create Account</Text>
+                <Text style={Styles.createAccount}>Create Account </Text>
             </TouchableOpacity>
         </ImageBackground>
     );

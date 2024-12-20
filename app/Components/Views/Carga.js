@@ -11,13 +11,12 @@ const Carga = () => {
 
    useEffect(() => {
     const timeout = setTimeout(() => {
-      router.replace('./pruebaDB')
-      //if(isAuth){
-        //router.replace('/Inicio');
+      if(isAuth){
+        router.replace('/Inicio');
 
-      //}else{
-       // router.replace('/SeleccionInicio');
-      //}
+      }else{
+       router.replace('/SeleccionInicio');
+      }
       
     }, 3500);
 
