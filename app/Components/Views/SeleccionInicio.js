@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import { Fontisto, Entypo } from '@expo/vector-icons';
+import Icons from '../Generic/Icons';
 import Colores from '../Generic/Colors';
 
 export default function SeleccionInicio() {
@@ -14,8 +14,8 @@ export default function SeleccionInicio() {
             <Text style={Styles.subTitle}>Sign in to your account </Text>
 
             <View style={Styles.contain}>
-                <Fontisto name="person" color={Colores.CowhineCocoa} size={20} style={{ marginRight: 10 }} />
-                <TextInput
+            {Icons.User({ color: Colores.CowhineCocoa, size: 20, style: { marginRight: 10 } })}               
+             <TextInput
                     placeholderTextColor={Colores.CowhineCocoa}
                     style={Styles.textInput}
                     placeholder="Username"
@@ -23,8 +23,8 @@ export default function SeleccionInicio() {
             </View>
 
             <View style={Styles.contain}>
-                <Fontisto name="locked" color={Colores.CowhineCocoa} size={20} style={{ marginRight: 10 }} />
-                <TextInput
+            {Icons.Locked({ color: Colores.CowhineCocoa, size: 20, style: { marginRight: 10 } })}
+            <TextInput
                     secureTextEntry={true}
                     placeholderTextColor={Colores.CowhineCocoa}
                     style={Styles.textInput}
@@ -39,11 +39,11 @@ export default function SeleccionInicio() {
             <View style={Styles.ButtonContainer}>
                 <Text style={Styles.singIn}>LOG IN</Text>
                 <TouchableOpacity style={Styles.IconCircle}>
-                    <Entypo name="arrow-right" size={20} color="#fff" />
+                {Icons.ArrowRight({ color: '#fff', size: 20 })}
                 </TouchableOpacity>
             </View>
 
-            <TouchableOpacity style={Styles.ButtonCreateAccount}>
+            <TouchableOpacity style={Styles.ButtonCreateAccount} activeOpacity={0.8}>
                 <Text style={Styles.createAccount}>CREATE ACCOUNT</Text>
             </TouchableOpacity>
 
@@ -112,19 +112,37 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'flex-end',
+
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+
+        elevation:10
     },
     ButtonCreateAccount: {
         marginTop: 20,
         width: '80%',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 20,
+        borderRadius: 25,
         backgroundColor: Colores.SpicedWine,
-        padding: 10,
+        paddingVertical: 15,
+
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+
+        elevation: 10,
+        borderWidth: 1,
+        borderColor: Colores.CowhineCocoa,
     },
     createAccount: {
-        fontSize: 15,
+        fontSize: 16,
         fontWeight: 'bold',
         color: '#fff',
+        letterSpacing: 1,
+        textTransform: 'uppercase',
     },
 });
